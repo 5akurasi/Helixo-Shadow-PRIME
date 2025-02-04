@@ -1,0 +1,93 @@
+body {
+  background-color: rgb(63, 63, 63);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.backdrop {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  width: 300px;
+  height: 450px;
+  background-color: rgba(204, 204, 204, 0.75);
+  z-index: -2;
+  border-radius: 5px;
+  box-shadow: 0 0 15px rgb(27, 27, 27);
+  filter: blur(1px);
+}
+
+.PrimeText {
+  top: calc(50% - 135px);
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  font-size: 40px;
+  color: rgb(255, 0, 0);
+}
+
+.switch-container {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  top: calc(50% + 145px);
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 100px;
+  height: 50px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.switch input:focus {
+  outline: none;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #f3ef00;
+  transition: 0.4s;
+  border-radius: 50px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 40px;
+  width: 40px;
+  border-radius: 50px;
+  left: 5px;
+  bottom: 5px;
+  background-color: rgb(206, 195, 49);
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background-color: #43414b;
+}
+
+input:checked + .slider:before {
+  background-color: #643764;
+}
+
+input:checked + .slider:before {
+  transform: translateX(50px);
+}
+
+.switch:hover .slider {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
